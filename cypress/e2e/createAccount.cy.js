@@ -17,7 +17,6 @@ describe("Testes de criação de conta", { baseUrl: loginPage.url }, () => {
 
   it("Preenche corretamente as informações", () => {
     loginPage.criarConta(infoCadastro.email);
-    infoCadastro.firstName = null;
     createAccountPage.preencherCadastro(infoCadastro);
     cy.get(myAccountPage.pageTitle).should("have.text", "My account");
   });
